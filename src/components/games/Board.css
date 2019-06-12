@@ -1,0 +1,40 @@
+.board-tile {
+  background-image: url("../../img/brown_brick.png");
+  background-size: 39px;
+  opacity: 0.8;
+  background-color: rgb(200, 148, 148);
+  height: 40px;
+  width: 40px;
+  color: rgba(0,0,0,0);
+}
+
+.board-tile-chosen {
+  background-image: url("https://images.cdn4.stockunlimited.net/preview1300/pixel-art-plant_1959586.jpg");
+  background-size: 39px;
+  opacity: 0.8;
+  background-color: rgba(13, 109, 13, 0.3);
+  height: 40px;
+  width: 40px;
+  color: rgba(0,0,0,0);
+}
+
+.board-tile-possible {
+  background-image: url("http://pixelartmaker.com/art/834c8e37145a362.png");
+  background-size: 39px;
+  opacity: 0.4;
+  border-color: rgb(36, 240, 36);
+  border-width: 7px;
+  height: 40px;
+  width: 40px;
+  color: rgba(0,0,0,0);
+}
+
+.board-tile-blocked {
+    background-image: url("../../img/grey_brick.png");
+    background-size: 39px;
+    opacity: 0.8;
+    background-color: rgb(200, 148, 148);
+    height: 40px;
+    width: 40px;
+    color: rgba(0,0,0,0);
+}

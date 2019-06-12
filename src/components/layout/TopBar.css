@@ -1,0 +1,12 @@
+body {
+  /* text-shadow: 2px 2px black; */
+  padding: 15px;
+ }
+ 
+ body > p {
+  margin: 25px 50px 75px 100px;
+ }
+ 
+ .toolbar {
+  background-image: url("https://i.pinimg.com/600x315/c9/46/87/c946879b0d22f95b7a12642ff24276f2.jpg");
+ }

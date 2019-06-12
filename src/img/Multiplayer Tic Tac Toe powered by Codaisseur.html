@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:3000/games/20 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <link rel="stylesheet" href="./Multiplayer Tic Tac Toe powered by Codaisseur_files/css">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Multiplayer Tic Tac Toe powered by Codaisseur</title>
+  <link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/88f64445-f9a8-4bfe-a780-ac8b5c4143af"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/3d2c2617-2b92-47c3-9e61-ffc2eff40784"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/b99fe597-0925-4b80-905b-895d23cee21e"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/925e5d74-2ffa-42fe-b77a-89f3ba4d597c"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/cd77178b-7170-4b04-ba4e-740368009305"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/4bf2ae21-5869-470a-9cca-ab0660c03bc5"><link type="text/css" rel="stylesheet" href="blob:http://localhost:3000/95604569-17d1-46ec-adc5-7c29b05af3a2"><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRipple-root-106 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRipple-ripple-107 {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipple-rippleVisible-108 {
+  opacity: 0.3;
+  transform: scale(1);
+  animation: mui-ripple-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation-name: $mui-ripple-enter;
+}
+.MuiTouchRipple-ripplePulsate-109 {
+  animation-duration: 200ms;
+}
+.MuiTouchRipple-child-110 {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  display: block;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipple-childLeaving-111 {
+  opacity: 0;
+  animation: mui-ripple-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation-name: $mui-ripple-exit;
+}
+.MuiTouchRipple-childPulsate-112 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: mui-ripple-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+  animation-name: $mui-ripple-pulsate;
+}
+@-webkit-keyframes mui-ripple-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes mui-ripple-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes mui-ripple-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root-103 {
+  color: inherit;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  justify-content: center;
+  -moz-appearance: none;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root-103::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root-103.MuiButtonBase-disabled-104 {
+  cursor: default;
+  pointer-events: none;
+}
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButton-root-77 {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  line-height: 1.75;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.MuiButton-root-77:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiButton-root-77.MuiButton-disabled-97 {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root-77:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-root-77:hover.MuiButton-disabled-97 {
+  background-color: transparent;
+}
+.MuiButton-label-78 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButton-text-79 {
+  padding: 6px 8px;
+}
+.MuiButton-textPrimary-80 {
+  color: #3f51b5;
+}
+.MuiButton-textPrimary-80:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-textPrimary-80:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-textSecondary-81 {
+  color: #f50057;
+}
+.MuiButton-textSecondary-81:hover {
+  background-color: rgba(245, 0, 87, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-textSecondary-81:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlined-85 {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 16px;
+}
+.MuiButton-outlined-85.MuiButton-disabled-97 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+.MuiButton-outlinedPrimary-86 {
+  color: #3f51b5;
+  border: 1px solid rgba(63, 81, 181, 0.5);
+}
+.MuiButton-outlinedPrimary-86:hover {
+  border: 1px solid #3f51b5;
+  background-color: rgba(63, 81, 181, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-outlinedPrimary-86:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlinedSecondary-87 {
+  color: #f50057;
+  border: 1px solid rgba(245, 0, 87, 0.5);
+}
+.MuiButton-outlinedSecondary-87:hover {
+  border: 1px solid #f50057;
+  background-color: rgba(245, 0, 87, 0.08);
+}
+.MuiButton-outlinedSecondary-87.MuiButton-disabled-97 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-outlinedSecondary-87:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-contained-88 {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+  background-color: #e0e0e0;
+}
+.MuiButton-contained-88.MuiButton-focusVisible-96 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButton-contained-88:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButton-contained-88.MuiButton-disabled-97 {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-contained-88:hover {
+  background-color: #d5d5d5;
+}
+@media (hover: none) {
+  .MuiButton-contained-88:hover {
+    background-color: #e0e0e0;
+  }
+}
+.MuiButton-contained-88:hover.MuiButton-disabled-97 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-containedPrimary-89 {
+  color: #fff;
+  background-color: #3f51b5;
+}
+.MuiButton-containedPrimary-89:hover {
+  background-color: #303f9f;
+}
+@media (hover: none) {
+  .MuiButton-containedPrimary-89:hover {
+    background-color: #3f51b5;
+  }
+}
+.MuiButton-containedSecondary-90 {
+  color: #fff;
+  background-color: #f50057;
+}
+.MuiButton-containedSecondary-90:hover {
+  background-color: #c51162;
+}
+@media (hover: none) {
+  .MuiButton-containedSecondary-90:hover {
+    background-color: #f50057;
+  }
+}
+.MuiButton-fab-94 {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  min-width: 0;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  border-radius: 50%;
+}
+.MuiButton-fab-94:active {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiButton-extendedFab-95 {
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  min-width: 48px;
+  border-radius: 24px;
+}
+.MuiButton-colorInherit-98 {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButton-mini-99 {
+  width: 40px;
+  height: 40px;
+}
+.MuiButton-sizeSmall-100 {
+  padding: 4px 8px;
+  min-width: 64px;
+  font-size: 0.8125rem;
+}
+.MuiButton-sizeLarge-101 {
+  padding: 8px 24px;
+  font-size: 0.9375rem;
+}
+.MuiButton-fullWidth-102 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root-10 {
+  background-color: #fff;
+}
+.MuiPaper-rounded-11 {
+  border-radius: 4px;
+}
+.MuiPaper-elevation0-12 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1-13 {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2-14 {
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3-15 {
+  box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4-16 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5-17 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6-18 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7-19 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8-20 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9-21 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10-22 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11-23 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12-24 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13-25 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14-26 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15-27 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16-28 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17-29 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18-30 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19-31 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20-32 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21-33 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22-34 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23-35 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24-36 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root-1 {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed-2 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+.MuiAppBar-positionAbsolute-3 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky-4 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic-5 {
+  position: static;
+}
+.MuiAppBar-positionRelative-6 {
+  position: relative;
+}
+.MuiAppBar-colorDefault-7 {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
+}
+.MuiAppBar-colorPrimary-8 {
+  color: #fff;
+  background-color: #3f51b5;
+}
+.MuiAppBar-colorSecondary-9 {
+  color: #fff;
+  background-color: #f50057;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root-41 {
+  margin: 0;
+  display: block;
+}
+.MuiTypography-display4-42 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 7rem;
+  font-weight: 300;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.14286em;
+  margin-left: -.04em;
+  letter-spacing: -.04em;
+}
+.MuiTypography-display3-43 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.30357em;
+  margin-left: -.02em;
+  letter-spacing: -.02em;
+}
+.MuiTypography-display2-44 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.8125rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.13333em;
+  margin-left: -.02em;
+}
+.MuiTypography-display1-45 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.125rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.20588em;
+}
+.MuiTypography-headline-46 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.35417em;
+}
+.MuiTypography-title-47 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.16667em;
+}
+.MuiTypography-subheading-48 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5em;
+}
+.MuiTypography-body2-49 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.71429em;
+}
+.MuiTypography-body1-50 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.46429em;
+}
+.MuiTypography-caption-51 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.375em;
+}
+.MuiTypography-button-52 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+}
+.MuiTypography-h1-53 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 6rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01562em;
+}
+.MuiTypography-h2-54 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.00833em;
+}
+.MuiTypography-h3-55 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0em;
+}
+.MuiTypography-h4-56 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 2.125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.00735em;
+}
+.MuiTypography-h5-57 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0em;
+}
+.MuiTypography-h6-58 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.MuiTypography-subtitle1-59 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+.MuiTypography-subtitle2-60 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+}
+.MuiTypography-overline-61 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly-62 {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+.MuiTypography-alignLeft-63 {
+  text-align: left;
+}
+.MuiTypography-alignCenter-64 {
+  text-align: center;
+}
+.MuiTypography-alignRight-65 {
+  text-align: right;
+}
+.MuiTypography-alignJustify-66 {
+  text-align: justify;
+}
+.MuiTypography-noWrap-67 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom-68 {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph-69 {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit-70 {
+  color: inherit;
+}
+.MuiTypography-colorPrimary-71 {
+  color: #3f51b5;
+}
+.MuiTypography-colorSecondary-72 {
+  color: #f50057;
+}
+.MuiTypography-colorTextPrimary-73 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary-74 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError-75 {
+  color: #f44336;
+}
+.MuiTypography-inline-76 {
+  display: inline;
+}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root-113 {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 24px;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  flex-shrink: 0;
+}
+.MuiSvgIcon-colorPrimary-114 {
+  color: #3f51b5;
+}
+.MuiSvgIcon-colorSecondary-115 {
+  color: #f50057;
+}
+.MuiSvgIcon-colorAction-116 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError-117 {
+  color: #f44336;
+}
+.MuiSvgIcon-colorDisabled-118 {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit-119 {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall-120 {
+  font-size: 20px;
+}
+.MuiSvgIcon-fontSizeLarge-121 {
+  font-size: 35px;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.MuiToolbar-root-37 {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-gutters-38 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiToolbar-gutters-38 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiToolbar-regular-39 {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .MuiToolbar-regular-39 {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .MuiToolbar-regular-39 {
+    min-height: 64px;
+  }
+}
+.MuiToolbar-dense-40 {
+  min-height: 48px;
+}
+</style></head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div><nav><header class="MuiPaper-root-10 MuiPaper-elevation4-16 MuiAppBar-root-1 MuiAppBar-positionAbsolute-3 MuiAppBar-colorPrimary-8" style="z-index: 10;"><div class="MuiToolbar-root-37 MuiToolbar-regular-39 MuiToolbar-gutters-38"><h2 class="MuiTypography-root-41 MuiTypography-title-47 MuiTypography-colorInherit-70" style="flex: 1 1 0%;">Multiplayer Tic Tac Toe</h2><button class="MuiButtonBase-root-103 MuiButton-root-77 MuiButton-text-79 MuiButton-flat-82 MuiButton-colorInherit-98" tabindex="0" type="button"><span class="MuiButton-label-78"><svg class="MuiSvgIcon-root-113" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"></path><path fill="none" d="M0 0h24v24H0z"></path></svg> a@b.com</span><span class="MuiTouchRipple-root-106"></span></button><button class="MuiButtonBase-root-103 MuiButton-root-77 MuiButton-text-79 MuiButton-flat-82 MuiButton-colorInherit-98" tabindex="0" type="button"><span class="MuiButton-label-78">All Games</span><span class="MuiTouchRipple-root-106"></span></button></div></header></nav><main style="margin-top: 75px;"><div class="MuiPaper-root-10 MuiPaper-elevation2-14 MuiPaper-rounded-11 outer-paper"><h1>Game #20</h1><p>Role: Weed</p><p>Pick a possible tile (translucid ones)</p><hr><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile-blocked">o</button><button class="board-tile-possible">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile-blocked">o</button><button class="board-tile-blocked">o</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-possible">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile-possible">-</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-blocked">o</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile-blocked">o</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-chosen">x</button><button class="board-tile-blocked">o</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile-blocked">o</button><button class="board-tile-blocked">o</button><button class="board-tile-possible">-</button><button class="board-tile-possible">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div><div><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button><button class="board-tile">-</button></div></div></main></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Multiplayer Tic Tac Toe powered by Codaisseur_files/bundle.js"></script><script src="./Multiplayer Tic Tac Toe powered by Codaisseur_files/0.chunk.js"></script><script src="./Multiplayer Tic Tac Toe powered by Codaisseur_files/main.chunk.js"></script><script src="./Multiplayer Tic Tac Toe powered by Codaisseur_files/main.54eb1ed50453842fb759.hot-update.js"></script>
+
+</body></html>
